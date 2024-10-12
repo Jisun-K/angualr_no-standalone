@@ -1,11 +1,26 @@
 <div class="container-box home">
     <div *ngIf="!isShowMe" class="first-view">
-        <img class="me" src="assets/images/memoji_hi.svg" alt="" (click)="onClickMe()">
-        <img class="cursor" src="assets/images/ic_pointer.png" alt="">
+        <img class="me" src="assets/images/memoji_hi.svg" alt="">
+        <!-- <img class="cursor" src="assets/images/ic_pointer.png" alt=""> -->
     </div>
     <!-- <about *ngIf="isShowMe"></about> -->
     <div *ngIf="isShowMe" class="second-view">
-        <p>It's Me!</p>
-
+        <!-- <div class="wave-circle"></div> -->
+        <div class="introduce-box">
+            <p class="greetings">Welcome:)</p>
+            <p class="my-contets">
+                안녕하세요.<br>
+                끊임없는 <span class="accent-text">도전</span>으로,
+                끝없이 <span class="accent-text">성장</span>하는 프론트 개발자 <br>
+                김지선입니다.
+            </p>
+            <ul class="site-list-box">
+                <li *ngFor="let site of siteList">
+                    <a [href]="site.url" target="_blank">
+                        <img [src]="site.img" [alt]="site.name">
+                    </a>
+                </li>
+            </ul>
+        </div>
     </div>
 </div>

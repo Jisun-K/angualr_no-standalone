@@ -1,3 +1,5 @@
+@use '../../../variable';
+
 .home {
     display: flex;
     align-items: center;
@@ -7,25 +9,68 @@
     .first-view {
         position: relative;
 
-        .cursor {
-            position: absolute;
-            right: 0;
-            top: 0;
-            animation: pointer 5s ease infinite;
-        }
+        // .cursor {
+        //     position: absolute;
+        //     right: 0;
+        //     top: 0;
+        //     animation: pointer 5s ease infinite;
+        // }
 
         .me {
             width: 60%;
             height: 60%;
             cursor: pointer;
             margin: 0 auto;
+            animation: bounce 2s ease infinite;
 
-            &:hover {
-                animation: bounce 2s ease infinite;
+            // &:hover {
+            //     animation: bounce 2s ease infinite;
+            // }
+
+            // &:hover~.cursor {
+            //     visibility: hidden;
+            // }
+        }
+    }
+
+    .second-view {
+        .wave-circle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 75%;
+            height: 40%;
+            max-width: 450px;
+            max-height: 350px;
+            border-radius: 45%;
+            opacity: .7;
+            z-index: 1;
+            background: variable.$primary2-color;
+            // animation: wave 10s -3s linear infinite;
+        }
+
+        .introduce-box {
+            position: relative;
+            z-index: 2;
+
+            .greetings {
+                font-family: variable.$bold-font;
             }
 
-            &:hover~.cursor {
-                visibility: hidden;
+            .my-contets {
+                .accent-text {
+                    color: variable.$accent-color;
+                    font-weight: 600;
+                }
+            }
+
+            .site-list-box {
+                display: flex;
+
+                li {
+                    margin: 8px 8px 8px 0;
+                }
             }
         }
     }
@@ -53,21 +98,21 @@
     }
 }
 
-@keyframes pointer {
-    60% {
-        opacity: 0.2;
-        transform: translateX(-110px) translateY(50px);
-    }
+// @keyframes pointer {
+//     60% {
+//         opacity: 0.2;
+//         transform: translateX(-110px) translateY(50px);
+//     }
 
-    20%,
-    0% {
-        opacity: 0;
-        transform: translateX(0px);
-    }
+//     20%,
+//     0% {
+//         opacity: 0;
+//         transform: translateX(0px);
+//     }
 
-    40%,
-    100% {
-        opacity: 1;
-        transform: translateX(-110px) translateY(50px);
-    }
-}
+//     40%,
+//     100% {
+//         opacity: 1;
+//         transform: translateX(-110px) translateY(50px);
+//     }
+// }
