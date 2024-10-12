@@ -1,0 +1,32 @@
+@font-face {
+    font-family: 'GmarketSansLight';
+    /* 사용할 폰트 이름 */
+    src: url('assets/fonts/GmarketSansLight.ttf') format('truetype');
+    /* TTF 파일 경로 */
+    font-weight: 300;
+    /* 폰트 두께 */
+    font-style: normal;
+    /* 폰트 스타일 */
+}
+
+@font-face {
+    font-family: 'GmarketSansMedium';
+    /* 사용할 폰트 이름 */
+    src: url('assets/fonts/GmarketSansMedium.ttf') format('truetype');
+    /* TTF 파일 경로 */
+    font-weight: normal;
+    /* 폰트 두께 */
+    font-style: normal;
+    /* 폰트 스타일 */
+}
+
+@font-face {
+    font-family: 'GmarketSansBold';
+    /* 사용할 폰트 이름 */
+    src: url('assets/fonts/GmarketSansBold.ttf') format('truetype');
+    /* TTF 파일 경로 */
+    font-weight: bold;
+    /* 폰트 두께 */
+    font-style: normal;
+    /* 폰트 스타일 */
+}
