@@ -25,7 +25,7 @@ export class HomeComponent {
 
   @HostListener('wheel', ['$event'])
   onMouseScroll(event: WheelEvent) {
-    this.isShowMe = true;
+    this.isShowMe = event.deltaY > 0 ? true : false;
     // this.currView = this.viewList[1].path;
     // this.router.navigate([this.currView]);
   }

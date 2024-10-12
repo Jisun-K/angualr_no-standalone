@@ -19,7 +19,6 @@
         .me {
             width: 60%;
             height: 60%;
-            cursor: pointer;
             margin: 0 auto;
             animation: bounce 2s ease infinite;
 
@@ -34,21 +33,21 @@
     }
 
     .second-view {
-        .wave-circle {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 75%;
-            height: 40%;
-            max-width: 450px;
-            max-height: 350px;
-            border-radius: 45%;
-            opacity: .7;
-            z-index: 1;
-            background: variable.$primary2-color;
-            // animation: wave 10s -3s linear infinite;
-        }
+        // .wave-circle {
+        //     position: absolute;
+        //     top: 50%;
+        //     left: 50%;
+        //     transform: translate(-50%, -50%);
+        //     width: 75%;
+        //     height: 40%;
+        //     max-width: 450px;
+        //     max-height: 350px;
+        //     border-radius: 45%;
+        //     opacity: .7;
+        //     z-index: 1;
+        //     background: variable.$primary2-color;
+        //     // animation: wave 10s -3s linear infinite;
+        // }
 
         .introduce-box {
             position: relative;
