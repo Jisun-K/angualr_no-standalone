@@ -1,0 +1,71 @@
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .first-view {
+        position: relative;
+
+        .cursor {
+            position: absolute;
+            right: 0;
+            top: 0;
+            animation: pointer 5s ease infinite;
+        }
+
+        .me {
+            width: 60%;
+            height: 60%;
+            cursor: pointer;
+        }
+
+        .me:hover {
+            animation: bounce 2s ease infinite;
+        }
+
+        .me:hover~.cursor {
+            visibility: hidden;
+        }
+    }
+
+}
+
+
+/* -------------------------------- animation ------------------------------- */
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-30px);
+    }
+
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes pointer {
+    60% {
+        opacity: 0.2;
+        transform: translateX(-150px) translateY(50px);
+    }
+
+    20%,
+    0% {
+        opacity: 0;
+        transform: translateX(0px);
+    }
+
+    40%,
+    100% {
+        opacity: 1;
+        transform: translateX(-150px) translateY(50px);
+    }
+}

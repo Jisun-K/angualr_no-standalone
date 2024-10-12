@@ -1,3 +1,14 @@
-<div class="home-container">
-
+<div class="container-box home">
+    <div *ngIf="true" class="first-view">
+        <img class="me" src="assets/images/memoji_hi.svg" alt="" (click)="onClickMe()">
+        <img class="cursor" src="assets/images/ic_pointer.png" alt="">
+    </div>
+    <div *ngIf="false" class="second-view">
+        ddddd
+    </div>
+    <!-- <div class="home-text">
+        <p>- 프론트 개발자 -</p>
+        <p>김지선</p>
+        <p>안녕하세요. 끊임없이 배우며 성장하는 개발자가 되고 싶은 김지선입니다.</p>
+    </div> -->
 </div>
