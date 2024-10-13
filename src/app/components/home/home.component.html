@@ -1,10 +1,10 @@
 <div class="container-box home">
-    <div [hidden]="isShowMe" class="first-view">
+    <div class="first-view" [ngClass]="{'hide': isShowMe, 'show': !isShowMe}">
         <img class="me" src="assets/images/memoji_hi.svg" alt="">
         <!-- <img class="cursor" src="assets/images/ic_pointer.png" alt=""> -->
     </div>
     <!-- <about *ngIf="isShowMe"></about> -->
-    <div [hidden]="!isShowMe" class="second-view" [ngClass]="{'active': isShowMe}">
+    <div class="second-view" [ngClass]="{'hide': !isShowMe, 'show': isShowMe}">
         <!-- <div class="wave-circle"></div> -->
         <div class="introduce-box">
             <p class="greetings">Welcome:)</p>

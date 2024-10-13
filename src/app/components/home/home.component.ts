@@ -1,5 +1,6 @@
 import { Component, HostListener } from '@angular/core';
-import { Route } from '@angular/router';
+import { Router } from '@angular/router';
+
 
 
 @Component({
@@ -8,8 +9,8 @@ import { Route } from '@angular/router';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
-
-  public isShowMe: boolean = false;
+  public isTransitioning: boolean = false; // 이벤트가 발생하였나
+  public isShowMe: boolean = false; // 소개글을 보여주냐
   public siteList: Array<any> = [
     {
       name: 'github',
@@ -23,13 +24,31 @@ export class HomeComponent {
     },
   ];
 
-  @HostListener('wheel', ['$event'])
-  onMouseScroll(event: WheelEvent) {
-    this.isShowMe = event.deltaY > 0 ? true : false;
-    // this.currView = this.viewList[1].path;
-    // this.router.navigate([this.currView]);
+  constructor(
+    private router: Router
+  ) {
+
   }
 
+  @HostListener('wheel', ['$event'])
+  onMouseScroll(event: WheelEvent) {
+    if (event.deltaY > 0) {
+      if (this.isShowMe) {
+        this.startTransition(true, true);
+      } else {
+        this.startTransition(true);
+      }
+    } else {
+      this.startTransition(false);
+    }
+  }
+
+  startTransition(showSecondView: boolean, navigateToAbout: boolean = false) {
+    this.isShowMe = showSecondView;
+    if (navigateToAbout) {
+      this.router.navigate(['about']);
+    }
+  }
 
   // onClickMe() {
   //   this.isShowMe = true;
