@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
-  public isShowMe: boolean = true; // 소개글을 보여주냐
+  public isShowMe: boolean = false; // 소개글을 보여주냐
   public siteList: Array<any> = [
     {
       name: 'github',
@@ -31,6 +31,7 @@ export class HomeComponent {
 
   @HostListener('wheel', ['$event'])
   onMouseScroll(event: WheelEvent) {
+    event.stopPropagation();
     if (event.deltaY > 0) {
       if (this.isShowMe) {
         this.startTransition(true, true);
