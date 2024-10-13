@@ -9,8 +9,7 @@ import { Router } from '@angular/router';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
-  public isTransitioning: boolean = false; // 이벤트가 발생하였나
-  public isShowMe: boolean = false; // 소개글을 보여주냐
+  public isShowMe: boolean = true; // 소개글을 보여주냐
   public siteList: Array<any> = [
     {
       name: 'github',

@@ -7,13 +7,14 @@
     <div class="second-view" [ngClass]="{'hide': !isShowMe, 'show': isShowMe}">
         <!-- <div class="wave-circle"></div> -->
         <div class="introduce-box">
-            <p class="greetings">Welcome:)</p>
-            <p class="my-contets">
-                안녕하세요.<br>
-                끊임없는 <span class="accent-text">도전</span>으로,
-                끝없이 <span class="accent-text">성장</span>하는 프론트 개발자 <br>
-                김지선입니다.
+            <h3>안녕하세요:)</h3>
+            <p class="deco">끊임없는 <span class="accent-text">도전</span>으로,
+                끝없이 <span class="accent-text">성장</span>하는 프론트 개발자<br>
+                <span class="name">김지선입니다.</span>
             </p>
+            <p class="simple-pr">4년간의 회계 및 경리 업무를 마무리한 후, 교육 과정을 통해 오류를 해결하고 코드 최적화 작업을 하면서 백엔드와 프론트엔드 구분 없이 개발대한 흥미를
+                느꼈습니다. 실무에서 서비스를
+                출시하며, 이전의 경험을 바탕으로 원활한 소통을 통해 기획, 디자인, 앱 출시 과정까지 참여했습니다. 현재까지도 개발에 대한 관심과 열정을 더욱 확장해 나가고 있습니다.</p>
             <ul class="site-list-box">
                 <li *ngFor="let site of siteList">
                     <a [href]="site.url" target="_blank">
