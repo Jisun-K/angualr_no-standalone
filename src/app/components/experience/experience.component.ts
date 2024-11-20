@@ -1,5 +1,5 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import { Component, HostListener } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'experience',
@@ -24,6 +24,13 @@ import { Component, HostListener } from '@angular/core';
   styleUrl: './experience.component.scss'
 })
 export class ExperienceComponent {
+  @ViewChild('scrollContainer') scrollContainer!: ElementRef;
+
+  // 스크롤 이벤트
+  public isAtBottom = false;
+  public isAtTop = false;
+  public isScroll = false;
+
   public isShowMe: boolean = false;
   public experienceList: any = {
     work: [
@@ -107,7 +114,32 @@ export class ExperienceComponent {
 
   @HostListener('wheel', ['$event'])
   onMouseScroll(event: WheelEvent) {
-    event.stopPropagation();
+    if (this.isScroll) {
+      event.stopPropagation();
+    }
+  }
+
+  // onScroll(event: Event): void {
+  //   const target = event.target as HTMLElement;
+  //   const scrollTop = target.scrollTop;
+  //   const scrollHeight = target.scrollHeight;
+  //   const clientHeight = target.clientHeight;
+
+  //   // 끝 감지
+  //   this.isAtBottom = scrollTop + clientHeight >= scrollHeight;
+  //   this.isAtTop = scrollTop === 0;
+
+  //   console.log('onScroll ===============<', target, scrollTop, scrollHeight, clientHeight);
+  // }
+
+  ngAfterViewInit(): void {
+    const element = this.scrollContainer.nativeElement;
+
+    if (element.scrollHeight > element.clientHeight) {
+      console.log('스크롤이 생겼습니다.');
+    } else {
+      console.log('스크롤이 없습니다.');
+    }
   }
 
   constructor() {

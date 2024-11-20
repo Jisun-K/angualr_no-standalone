@@ -1,4 +1,4 @@
-<div class="container-box exp" [@toggleView]="isShowMe ? 'hidden' : 'visible'">
+<div #scrollContainer class="container-box exp" [@toggleView]="isShowMe ? 'hidden' : 'visible'">
     <ng-container *ngFor="let type of [ 'work', 'study']">
         <div class="exp-box" *ngFor="let item of experienceList[type]">
             <img class="exp-img" *ngIf="type == 'study'" src="assets/images/ic_study.svg" alt="">
