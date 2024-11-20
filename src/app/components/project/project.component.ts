@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'about',
-  templateUrl: './about.component.html',
-  styleUrl: './about.component.scss'
+  selector: 'project',
+  templateUrl: './project.component.html',
+  styleUrl: './project.component.scss'
 })
-export class AboutComponent {
+export class ProjectComponent {
   public items: Array<any> = [
     {
       title: '관심 갖게된 계기, 목표(수정)'

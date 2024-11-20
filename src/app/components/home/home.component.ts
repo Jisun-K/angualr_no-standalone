@@ -43,10 +43,10 @@ export class HomeComponent {
     }
   }
 
-  startTransition(showSecondView: boolean, navigateToAbout: boolean = false) {
+  startTransition(showSecondView: boolean, navigatePage: boolean = false) {
     this.isShowMe = showSecondView;
-    if (navigateToAbout) {
-      this.router.navigate(['about']);
+    if (navigatePage) {
+      this.router.navigate(['experience']);
     }
   }
 

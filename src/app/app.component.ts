@@ -1,5 +1,5 @@
 import { Component, HostListener } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -12,11 +12,11 @@ export class AppComponent {
       name: "home",
     },
     {
-      name: "about",
-    },
-    {
       name: "experience",
     },
+    {
+      name: "project",
+    }
   ];
 
   constructor(

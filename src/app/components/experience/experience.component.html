@@ -1,3 +1,19 @@
-<div class="container-box exp">
-    경험 페이지랍니다.
+<div class="container-box exp" [@toggleView]="isShowMe ? 'hidden' : 'visible'">
+    <ng-container *ngFor="let type of [ 'work', 'study']">
+        <div class="exp-box" *ngFor="let item of experienceList[type]">
+            <img class="exp-img" *ngIf="type == 'study'" src="assets/images/ic_study.svg" alt="">
+            <img class="exp-img" *ngIf="type == 'work'" src="assets/images/ic_company.svg" alt="">
+            <div class="exp-contents">
+                <p class="date"> {{ item.date }}</p>
+                <p class="title">{{ item.title }}</p>
+                <ul *ngIf="item.project?.length">
+                    <li *ngFor="let project of item.project">
+                        <strong>{{ project.name }}</strong>
+                        <p class="desc">{{ project.contents }}</p>
+                        <p *ngIf="item.result">📍 {{ item.result }}</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </ng-container>
 </div>
