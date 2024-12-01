@@ -57,26 +57,26 @@ export class ExperienceComponent {
           },
           {
             id: 'rolling',
-            name: '굿 노트에서 사용하는 속지, 스티커를 판매, 구입할 수 있는 서비스( 자사 웹 )',
-            contents: '',
+            name: 'Rolling',
+            contents: '굿 노트에서 사용하는 속지, 스티커를 판매, 구입할 수 있는 서비스( 자사 웹 )',
             page: ''
           },
           {
             id: 'blank',
-            name: '여러가지의 메모, 기록할 수 있는 다이어리 웹/앱(Blank)',
-            contents: '',
+            name: 'BLANK',
+            contents: '여러가지의 메모, 기록할 수 있는 다이어리 웹 앱(Blank) 서비스 입니다.',
             page: ''
           },
           {
             id: 'diary',
-            name: 'Blank를 축소시켜 간소화한 다이어리 앱(그림일기장)',
-            contents: '',
+            name: '그림일기장',
+            contents: 'Blank의 복잡성을 줄여 최소한의 기능으로 일별로 작성하는 그림일기 서비스입니다.',
             page: ''
           },
           {
             id: 'calendar',
-            name: '그림으로 월 달력을 기록하는 다이어리 앱(그림달력)',
-            contents: '',
+            name: '그림달력',
+            contents: '그림일기장과 같은 시리즈로 달력을 그림으로 기록하는 그림달력 서비스입니다.',
             page: ''
           },
         ],

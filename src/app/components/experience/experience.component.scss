@@ -1,37 +1,62 @@
 @use '../../../variable';
 
 .exp {
-    & .exp-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: scroll;
+
+    .exp-wrap {
+        height: auto;
         display: flex;
+    }
 
-        .exp-img {
-            width: 36px;
-            height: 36px;
-            background: variable.$primary2-color;
-            border-radius: 50%;
-            padding: 6px;
-        }
+    .item-wrap {
+        flex: 1;
 
-        .exp-contents {
-            margin: 0 0 0 8px;
-            font-size: variable.$small-size;
+        & .exp-item-box {
+            display: flex;
 
-            .date {
-                line-height: 1.2rem;
+            .exp-img {
+                width: 36px;
+                height: 36px;
+                background: variable.$primary2-color;
+                border-radius: 50%;
+                padding: 6px;
             }
 
-            .title {
-                font-size: variable.$small-size + 2px;
-                font-weight: bold;
-            }
+            .exp-contents {
+                margin: 0 0 0 8px;
+                font-size: variable.$small-size;
 
-            .date,
-            .title,
-            .desc {
-                margin: 6px 0;
-            }
+                .date {
+                    line-height: 1.2rem;
 
-            // .desc {}
+                    span {
+                        font-size: variable.$small-size - 2px;
+                        margin: 0 0 0 4px;
+                    }
+                }
+
+                .title {
+                    font-size: variable.$small-size + 2px;
+                    font-weight: bold;
+                }
+
+                .date,
+                .title,
+                .desc {
+                    margin: 6px 0;
+                }
+
+                & .exp-result {
+                    background: variable.$accent2-color;
+                    color: white;
+                    padding: 4px;
+                    font-family: variable.$thin-font;
+                    border-radius: 5px;
+                }
+            }
         }
     }
 }
