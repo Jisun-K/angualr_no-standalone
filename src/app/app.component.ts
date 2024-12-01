@@ -14,9 +14,9 @@ export class AppComponent {
     {
       name: "experience",
     },
-    {
-      name: "project",
-    }
+    // {
+    //   name: "project",
+    // }
   ];
 
   constructor(
