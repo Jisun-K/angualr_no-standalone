@@ -1,5 +1,6 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'experience',
@@ -52,12 +53,11 @@ export class ExperienceComponent {
         project: [
           {
             id: '',
-            name: '외주 웹 개발',
-            contents: 'angular를 이용한 첫 프로젝트였습니다. ',
+            name: '외주 웹 개발(운영X)',
           },
           {
             id: 'rolling',
-            name: 'Rolling',
+            name: 'Rolling(운영X)',
             contents: '굿 노트에서 사용하는 속지, 스티커를 판매, 구입할 수 있는 서비스( 자사 웹 )',
             page: ''
           },
@@ -65,18 +65,21 @@ export class ExperienceComponent {
             id: 'blank',
             name: 'BLANK',
             contents: '여러가지의 메모, 기록할 수 있는 다이어리 웹 앱(Blank) 서비스 입니다.',
+            detail: '2022.',
             page: ''
           },
           {
             id: 'diary',
             name: '그림일기장',
             contents: 'Blank의 복잡성을 줄여 최소한의 기능으로 일별로 작성하는 그림일기 서비스입니다.',
+            detail: 'ds',
             page: ''
           },
           {
             id: 'calendar',
             name: '그림달력',
             contents: '그림일기장과 같은 시리즈로 달력을 그림으로 기록하는 그림달력 서비스입니다.',
+            detail: 'dsd',
             page: ''
           },
         ],
@@ -133,18 +136,26 @@ export class ExperienceComponent {
   // }
 
   ngAfterViewInit(): void {
-    const element = this.scrollContainer.nativeElement;
+    // const element = this.scrollContainer.nativeElement;
 
-    if (element.scrollHeight > element.clientHeight) {
-      console.log('스크롤이 생겼습니다.');
-    } else {
-      console.log('스크롤이 없습니다.');
-    }
+    // if (element.scrollHeight > element.clientHeight) {
+    //   console.log('스크롤이 생겼습니다.');
+    // } else {
+    //   console.log('스크롤이 없습니다.');
+    // }
   }
 
-  constructor() {
+  constructor(
+    private router: Router
+  ) {
     setTimeout(() => {
       this.isShowMe = true;
     }, 300);
+
+  }
+
+  onClickProject(item: any) {
+    if (!item.detail || item.detail.length == 0) { return; }
+    this.router.navigate(['project']);
   }
 }
