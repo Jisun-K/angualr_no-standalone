@@ -1,7 +1,11 @@
+@use '../../../variable';
+
 .project {
-    div {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    ul {
+        li {
+            &.active {
+                color: variable.$accent_color;
+            }
+        }
     }
 }

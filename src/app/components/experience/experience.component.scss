@@ -7,7 +7,6 @@
     overflow: scroll;
 
     .exp-wrap {
-        height: auto;
         display: flex;
     }
 
@@ -49,6 +48,25 @@
                     margin: 6px 0;
                 }
 
+                .active {
+                    cursor: pointer;
+
+                    strong {
+                        position: relative;
+                    }
+
+                    img {
+                        width: 32px;
+                        position: absolute;
+                        top: -14px;
+                        right: -20px;
+                    }
+
+                    &:hover {
+                        opacity: .5;
+                    }
+                }
+
                 & .exp-result {
                     background: variable.$accent2-color;
                     color: white;
@@ -57,6 +75,16 @@
                     border-radius: 5px;
                 }
             }
+        }
+    }
+}
+
+// 최대 576px
+@media (max-width: 576px) {
+    .exp {
+        .exp-wrap {
+            height: 100%;
+            display: block;
         }
     }
 }

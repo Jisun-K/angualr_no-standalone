@@ -1,8 +1,5 @@
 <div class="container-box project">
-    <!-- <div *ngFor="let item of items">
-        {{item.title}}
-    </div> -->
-    <div>
-        준비중입니다.
-    </div>
+    <ul>
+        <li *ngFor="let item of items" [ngClass]="item.id == currId ? 'active' : ''">{{item.id}}</li>
+    </ul>
 </div>

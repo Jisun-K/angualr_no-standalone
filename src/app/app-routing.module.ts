@@ -7,7 +7,8 @@ import { ExperienceComponent } from './components/experience/experience.componen
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'project', component: ProjectComponent },
+  { path: 'project', redirectTo: 'project/rolling', pathMatch: 'full' },
+  { path: 'project/:id', component: ProjectComponent },
   { path: 'experience', component: ExperienceComponent },
   // { path: '**', component: PageNotFoundComponent },
 

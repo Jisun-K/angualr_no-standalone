@@ -9,8 +9,12 @@
                     <p class="date"> <b>{{item.companyName}}</b> <span>{{ item.date }}</span></p>
                     <p class="title">{{ item.title }}</p>
                     <ul *ngIf="item.project?.length">
-                        <li *ngFor="let project of item.project" (click)="onClickProject(project)">
-                            <strong><span *ngIf="type == 'work'">📍</span> {{ project.name }}</strong>
+                        <li *ngFor="let project of item.project"
+                            [ngClass]="project.id && project.id.length > 0 ? 'active' : ''"
+                            (click)="onClickProject(project)">
+                            <strong><span *ngIf="type == 'work'">📍</span> {{ project.name }}
+                                <img *ngIf="project.id && project.id.length > 0" src="assets/images/ic_pointer.png"
+                                    alt=""></strong>
                             <p class="desc">{{ project.contents }}</p>
                             <p *ngIf="item.result" class="exp-result">💡 {{ item.result }}</p>
                         </li>
