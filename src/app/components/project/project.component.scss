@@ -4,7 +4,35 @@
     ul {
         li {
             &.active {
-                color: variable.$accent_color;
+
+                & .item-box:hover {
+                    .contents {
+                        display: block;
+                    }
+                }
+            }
+
+            img {
+                width: 654px;
+            }
+
+            .item-box {
+                position: relative;
+                width: fit-content;
+                font-size: variable.$defulat-size - 4px;
+
+                .contents {
+                    // display: none;
+                    position: absolute;
+                    z-index: 1;
+                    top: 0;
+                    left: 0;
+                    width: -webkit-fill-available;
+                    height: 100%;
+                    background: white;
+                    opacity: .8;
+                    padding: 8px 12px;
+                }
             }
         }
     }
