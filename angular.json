@@ -27,7 +27,7 @@
             "outputPath": "docs",
             "index": "src/index.html",
             "browser": "src/main.ts",
-            "baseHref": "/portfolio_angular/",
+            "baseHref": "/browser/",
             "polyfills": [
               "zone.js"
             ],
