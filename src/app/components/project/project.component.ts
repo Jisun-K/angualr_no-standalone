@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { register } from 'swiper/element/bundle';
 
 @Component({
   selector: 'project',
@@ -21,14 +22,15 @@ export class ProjectComponent implements OnInit {
       id: 'blank',
       name: 'BLANK',
       image: 'assets/images/project_blank.PNG',
-      contents: '여러가지의 메모, 기록할 수 있는 다이어리 웹 앱(Blank) 서비스 입니다.',
+      contents: ' 다양한 형태로 일상을 기록할 수 있는 서비스입니다. 사용자들이 필요한 스티커와 템플릿 등을 직접 제작 사용뿐만 아닌 판매할 수 있는 기능이 있습니다. 이를 통해 사용자들이 개인적인 일상이나 기록을 다양하게 표현하여 작성할 수 있습니다.<br> PWA 기술을 활용하여 데스크톱 앱으로 다운로드하여 사용할 수 있도록 지원하며, SwiftUI의 WebView를 통해 네이티브 앱으로도 출시되었습니다.<br> 또한, Firebase를 백엔드로 사용하여 실시간 데이터 저장 및 관리를 구현하였습니다. 기존의 CSS 프레임워크나 라이브러리(예: Material UI)는 사용하지 않고, 모든 UI 요소를 직접 구현하여 독창적이고 커스터마이즈된 디자인을 구현했습니다.',
       page: ''
+
     },
     {
       id: 'diary',
       name: '그림일기장',
       image: 'assets/images/project_diary.PNG',
-      contents: 'Blank의 복잡성을 줄여 최소한의 기능으로 일별로 작성하는 그림일기 서비스입니다.',
+      contents: '기획과 디자인을 처음 맡아서 진행한 프로젝트로, Blank 복잡성과 같은 문제를 해결하기 위해 만든그림일기 서비스입니다. Blank 프로젝트의 코드를 그대로 사용하되, config.json 파일을 만들어 설정만 다르게 하여 빌드하고, config의 id에 따라 기능과 코드에 차이를 두어 유연한 개발 환경을 마련했습니다. 이 과정에서 사용자 경험을 단순화하고 직관적인 디자인을 통해 보다 사용자 친화적인 서비스를 제공할 수 있었습니다.',
       page: ''
     },
     {
@@ -47,8 +49,18 @@ export class ProjectComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    register();
+
+    const swiperContainer = document.querySelector('swiper-container') as HTMLElement;
+
     this.activeRoute.params.subscribe(param => {
-      this.currId = param['id'] || 'blank';
+      this.currId = param['id'] || 'groupWare';
+      let slideIndex = this.items.findIndex(item => item.id == this.currId);
+      if (slideIndex !== -1) {
+        (swiperContainer as any).swiper.slideTo(slideIndex);
+      }
     });
+
+
   }
 }

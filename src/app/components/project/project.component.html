@@ -1,10 +1,19 @@
 <div class="container-box project">
-    <ul>
+    <!-- <ul>
         <li *ngFor="let item of items" [ngClass]="item.id == currId ? 'active' : ''">
             <div class="item-box">
                 <img [src]="item.image">
                 <p class="contents">{{item.contents}}</p>
             </div>
         </li>
-    </ul>
+    </ul> -->
+
+    <swiper-container slides-per-view="1" pagination="true" class="swiper-container">
+        <swiper-slide *ngFor="let item of items" class="project-item">
+            <div class="item-box">
+                <img [src]="item.image">
+                <p class="contents" [innerHTML]="item.contents"></p>
+            </div>
+        </swiper-slide>
+    </swiper-container>
 </div>

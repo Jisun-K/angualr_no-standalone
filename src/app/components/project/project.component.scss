@@ -1,39 +1,48 @@
 @use '../../../variable';
 
 .project {
-    ul {
-        li {
-            &.active {
+    .swiper-container {
+        height: inherit;
+        // display: flex;
+    }
 
-                & .item-box:hover {
-                    .contents {
-                        display: block;
-                    }
-                }
+
+
+    .project-item {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            width: 654px;
+            height: 525px;
+        }
+
+        .item-box {
+            position: relative;
+            width: fit-content;
+            font-size: variable.$defulat-size - 4px;
+
+            .contents {
+                // display: none;
+                position: absolute;
+                z-index: 1;
+                top: 0;
+                left: 0;
+                width: -webkit-fill-available;
+                height: 100%;
+                background: white;
+                opacity: .8;
+                padding: 8px 12px;
             }
 
-            img {
-                width: 654px;
-            }
-
-            .item-box {
-                position: relative;
-                width: fit-content;
-                font-size: variable.$defulat-size - 4px;
-
+            &:hover {
                 .contents {
-                    // display: none;
-                    position: absolute;
-                    z-index: 1;
-                    top: 0;
-                    left: 0;
-                    width: -webkit-fill-available;
-                    height: 100%;
-                    background: white;
-                    opacity: .8;
-                    padding: 8px 12px;
+                    display: block;
                 }
             }
+
         }
     }
 }
