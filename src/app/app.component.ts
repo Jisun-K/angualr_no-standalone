@@ -53,7 +53,7 @@ export class AppComponent {
 
   getCurrPage() {
     let url = window.location.href;
-    return url.split('/')[3];
-    // return url.split('/')[4];
+    // return url.split('/')[3];
+    return url.split('/')[4];
   }
 }
