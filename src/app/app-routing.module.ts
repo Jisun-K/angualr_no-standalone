@@ -7,9 +7,16 @@ import { ExperienceComponent } from './components/experience/experience.componen
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'project', redirectTo: 'project/groupWare', pathMatch: 'full' },
-  { path: 'project/:id', component: ProjectComponent },
   { path: 'experience', component: ExperienceComponent },
+  {
+    path: 'project',
+    children: [
+      { path: '', redirectTo: 'groupWare', pathMatch: 'full' }, // 'project'만 입력하면 'groupWare'로 리디렉션
+      { path: ':id', component: ProjectComponent }, // 동적 경로 처리
+    ]
+  }
+  // { path: 'project', redirectTo: 'project/groupWare', pathMatch: 'full' },
+  // { path: 'project/:id', component: ProjectComponent },
   // { path: '**', component: PageNotFoundComponent },
 
   // {path: 'hero/:id', component: HeroDetailComponent},
