@@ -10,12 +10,15 @@ export class AppComponent {
   public pageList = [
     {
       name: "home",
+      path: "home"
     },
     {
       name: "experience",
+      path: "experience",
     },
     {
-      name: "project",
+      name: "project/groupWare",
+      path: "project",
     }
   ];
 
@@ -29,7 +32,7 @@ export class AppComponent {
   @HostListener('wheel', ['$event'])
   onMouseScroll(event: WheelEvent) {
     let currPage = this.getCurrPage();
-    let currentIndex = this.pageList.findIndex(page => page.name === currPage);
+    let currentIndex = this.pageList.findIndex(page => page.path === currPage);
 
     if (event.deltaY > 0) {
 
@@ -38,7 +41,7 @@ export class AppComponent {
         this.router.navigate([this.pageList[currentIndex + 1].name]);
       }
     } else {
-
+      console.log("onMouseScroll ===========>", currPage, currentIndex, this.pageList.length);
       // 위로 스크롤 시
       if (currentIndex > 0) {
         this.router.navigate([this.pageList[currentIndex - 1].name]);
