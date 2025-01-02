@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { ExperienceComponent } from './components/experience/experience.component';
 import { ProjectComponent } from './components/project/project.component';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 
 
@@ -20,11 +21,11 @@ import { ProjectComponent } from './components/project/project.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
     // BrowserAnimationsModule
     // RouterModule.forRoot([])
   ],
-  providers: [],
+  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
