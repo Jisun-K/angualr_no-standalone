@@ -31,10 +31,12 @@ export class AppComponent {
   // 전체적인 스크롤 이벤트를 받아 아래, 위에 맞는 routerLink 보내기 
   @HostListener('wheel', ['$event'])
   onMouseScroll(event: WheelEvent) {
+
     let currPage = this.getCurrPage();
     let currentIndex = this.pageList.findIndex(page => page.path === currPage);
 
     if (event.deltaY > 0) {
+      console.log("onMouseScroll ===========>", currPage, currentIndex, this.pageList.length);
 
       // 아래로 스크롤 시
       if (currentIndex < this.pageList.length - 1) {

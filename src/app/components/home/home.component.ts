@@ -31,7 +31,7 @@ export class HomeComponent {
 
   @HostListener('wheel', ['$event'])
   onMouseScroll(event: WheelEvent) {
-    event.stopPropagation();
+    event.stopPropagation(); // 이벤트를 막음. 
     if (event.deltaY > 0) {
       if (this.isShowMe) {
         this.startTransition(true, true);

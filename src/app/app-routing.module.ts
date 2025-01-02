@@ -8,10 +8,10 @@ const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'experience', component: ExperienceComponent },
-  { path: 'project/groupWare', component: ProjectComponent },
-  { path: 'project/:id', component: ProjectComponent },
-  // { path: 'project', redirectTo: 'project/groupWare', pathMatch: 'full' },
+  // { path: 'project/groupWare', component: ProjectComponent },
   // { path: 'project/:id', component: ProjectComponent },
+  { path: 'project', redirectTo: 'project/groupWare', pathMatch: 'full' },
+  { path: 'project/:id', component: ProjectComponent },
   // { path: '**', component: PageNotFoundComponent },
 
   // {path: 'hero/:id', component: HeroDetailComponent},

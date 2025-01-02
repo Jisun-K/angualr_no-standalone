@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { register } from 'swiper/element/bundle';
 
 @Component({
@@ -43,10 +43,21 @@ export class ProjectComponent implements OnInit {
   ];
 
   constructor(
-    private activeRoute: ActivatedRoute
+    private activeRoute: ActivatedRoute,
+    private router: Router
   ) {
 
   }
+
+  onMouseScroll(event: WheelEvent) {
+
+    if (event.deltaY < 0) {
+
+      // 위로 스크롤 시
+      this.router.navigate(['experience']);
+    }
+  }
+
 
   ngOnInit(): void {
     register();
@@ -54,7 +65,7 @@ export class ProjectComponent implements OnInit {
     const swiperContainer = document.querySelector('swiper-container') as HTMLElement;
 
     this.activeRoute.params.subscribe(param => {
-      this.currId = param['id'] || 'groupWare';
+      this.currId = param['id'];
       let slideIndex = this.items.findIndex(item => item.id == this.currId);
       if (slideIndex !== -1) {
         (swiperContainer as any).swiper.slideTo(slideIndex);
