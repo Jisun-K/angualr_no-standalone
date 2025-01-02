@@ -112,12 +112,12 @@ export class ExperienceComponent {
     ]
   };
 
-  @HostListener('wheel', ['$event'])
-  onMouseScroll(event: WheelEvent) {
-    if (this.isScroll) {
-      event.stopPropagation();
-    }
-  }
+  // @HostListener('wheel', ['$event'])
+  // onMouseScroll(event: WheelEvent) {
+  //   if (this.isScroll) {
+  //     event.stopPropagation();
+  //   }
+  // }
 
   // onScroll(event: Event): void {
   //   const target = event.target as HTMLElement;

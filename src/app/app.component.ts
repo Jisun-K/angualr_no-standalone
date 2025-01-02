@@ -30,12 +30,15 @@ export class AppComponent {
   onMouseScroll(event: WheelEvent) {
     let currPage = this.getCurrPage();
     let currentIndex = this.pageList.findIndex(page => page.name === currPage);
+
     if (event.deltaY > 0) {
+
       // 아래로 스크롤 시
       if (currentIndex < this.pageList.length - 1) {
         this.router.navigate([this.pageList[currentIndex + 1].name]);
       }
     } else {
+
       // 위로 스크롤 시
       if (currentIndex > 0) {
         this.router.navigate([this.pageList[currentIndex - 1].name]);
@@ -45,6 +48,6 @@ export class AppComponent {
 
   getCurrPage() {
     let url = window.location.href;
-    return url.split('/').pop() as string;
+    return url.split('/')[3];
   }
 }
