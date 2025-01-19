@@ -29,6 +29,8 @@ export class HomeComponent {
 
   }
 
+
+  // 데스크탑
   @HostListener('wheel', ['$event'])
   onMouseScroll(event: WheelEvent) {
     event.stopPropagation(); // 이벤트를 막음. 
@@ -40,6 +42,15 @@ export class HomeComponent {
       }
     } else {
       this.startTransition(false);
+    }
+  }
+
+  @HostListener('touchstart', ['$event'])
+  onTouchStart(event: TouchEvent) {
+    if (this.isShowMe) {
+      this.startTransition(true, true);
+    } else {
+      this.startTransition(true);
     }
   }
 
